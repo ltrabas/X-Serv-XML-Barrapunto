@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 # -*- coding: utf-8 -*-
-
+#LAURA TRABAS CLAVERO
 #
 # Simple XML parser for the RSS channel from BarraPunto
 # Jesus M. Gonzalez-Barahona
@@ -44,7 +44,6 @@ class myContentHandler(ContentHandler):
                 self.theContent = ""
             elif name == 'link':
                 lnk = "<li><a href='" + self.theContent + "'>" + self.line + "</a></li><br/>"
-                #lnk = "<li><a href='" + self.theContent +  "</a></li><br/>"
                 print (lnk)
                 self.inContent = False
                 self.theContent = ""
@@ -54,14 +53,6 @@ class myContentHandler(ContentHandler):
         if self.inContent:
             self.theContent = self.theContent + chars
 
-# --- Main prog
-"""Como lo sacamos de la url esto ya no hace falta, lo dejo comentado por
-si se quiere usar el barrapunto.rss """
-#if len(sys.argv)<2:
-#    print ("Usage: python xml-parser-barrapunto.py <document>")
-#    print (" <document>: file name of the document to parse")
-#    sys.exit(1)
-""" Imprimimos el comienzo del html"""
 print("<!DOCTYPE html><html><body>")
 print("<ul>")
 # Load parser and driver
